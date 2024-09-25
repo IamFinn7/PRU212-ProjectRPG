@@ -13,9 +13,14 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     Animator animator;
     SpriteRenderer render;
+    public bool canMove = true;
 
     void OnMove(InputValue movementValue){
         movementInput = movementValue.Get<Vector2>(); //input from keyboard
+    }
+
+    void OnFire(){
+        animator.SetTrigger("swordAttack");//kích hoạt animator chém
     }
 
     void Start()
@@ -27,24 +32,29 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //nếu bấm phím để di chuyển
-        if(movementInput != Vector2.zero)
+        if (canMove)
         {
-            bool success = tryMove(movementInput);
-            animator.SetBool("isMoving", success);
-        }
-        else
-        {
-            animator.SetBool("isMoving", false);
-        }
+            //nếu bấm phím để di chuyển
+            if(movementInput != Vector2.zero)
+            {
+                bool success = tryMove(movementInput);
+                animator.SetBool("isMoving", success);
+            }
+            else
+            {
+                animator.SetBool("isMoving", false);
+            }
 
-        if (movementInput.x < 0)
-        {
-            render.flipX = true;
-        }
-        else if (movementInput.x > 0)
-        {
-            render.flipX = false;
+            if (movementInput.x < 0)
+            {
+                render.flipX = true;
+                gameObject.BroadcastMessage("IsFacingRight", false);
+            }
+            else if (movementInput.x > 0)
+            {
+                render.flipX = false;
+                gameObject.BroadcastMessage("IsFacingRight", true);
+            }
         }
     } 
 
@@ -72,4 +82,13 @@ public class PlayerController : MonoBehaviour
         return false;
     }
 
+    public void LockMovement()
+    {
+        canMove = false;
+    }
+
+    public void UnLockMovement()
+    {
+        canMove = true;
+    }
 }
