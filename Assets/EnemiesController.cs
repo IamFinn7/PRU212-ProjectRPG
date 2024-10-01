@@ -12,7 +12,6 @@ public class EnemiesController : MonoBehaviour
             health = value;
             if (health <= 0)
             {
-                Defeated();
             }
         }
         get
@@ -22,17 +21,13 @@ public class EnemiesController : MonoBehaviour
     }   
     public float health = 3;
 
-    public void Defeated()
-    {
-        animator.SetTrigger("Defeated");
-    }
 
     private void Start()
     {
         animator = GetComponent<Animator>();
     }
 
-    void removeObj(){
-        Destroy(gameObject);
+    public void OnHit(){
+        print("Hit");
     }
 }

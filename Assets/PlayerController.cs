@@ -6,14 +6,13 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 0.5f; //player's speed
-    public float collisionOffset = 1f; //khoảng cách giữa player vs vật thể
-    public ContactFilter2D movementFilter;
-    List<RaycastHit2D> castCollision = new List<RaycastHit2D>();
+    public float maxSpeed = 2.5f;
+    public bool canMove = true;
     Vector2 movementInput; 
     Rigidbody2D rb;
     Animator animator;
     SpriteRenderer render;
-    public bool canMove = true;
+
 
     void OnMove(InputValue movementValue){
         movementInput = movementValue.Get<Vector2>(); //input from keyboard
@@ -32,19 +31,13 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (canMove)
-        {
             //nếu bấm phím để di chuyển
-            if(movementInput != Vector2.zero)
-            {
-                bool success = tryMove(movementInput);
-                animator.SetBool("isMoving", success);
-            }
-            else
-            {
-                animator.SetBool("isMoving", false);
-            }
-
+        if(canMove && movementInput != Vector2.zero)
+        {
+            //rb.velocity là vector(gồm hướng và độ lớn của vận tốc) của Rigidbody
+            //ClampMagnitude: giới hạn độ lớn của vector
+            //nếu tổng vận tốc vượt quá MaxSpeed thì nó sẽ giảm xuống bằng MaxSpeed
+            rb.velocity = Vector2.ClampMagnitude(rb.velocity + (movementInput * moveSpeed * Time.deltaTime), maxSpeed);
             if (movementInput.x < 0)
             {
                 render.flipX = true;
@@ -55,40 +48,10 @@ public class PlayerController : MonoBehaviour
                 render.flipX = false;
                 gameObject.BroadcastMessage("IsFacingRight", true);
             }
+        }   
+        else
+        {
+            animator.SetBool("isMoving", false);
         }
     } 
-
-    //hàm dùng để check có vật cản không
-    private bool tryMove(Vector2 direction){
-        if (direction != Vector2.zero)
-        {
-            //check barrier, if yes -> return 1, if no -> return 0
-            int count = rb.Cast(
-                direction,
-                movementFilter,
-                castCollision,
-                moveSpeed * Time.fixedDeltaTime + collisionOffset
-            ); 
-
-            //if no -> allow movement -> return true
-            if (count == 0)
-            {
-                rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
-                return true;
-            }
-
-            return false;
-        }
-        return false;
-    }
-
-    public void LockMovement()
-    {
-        canMove = false;
-    }
-
-    public void UnLockMovement()
-    {
-        canMove = true;
-    }
 }
