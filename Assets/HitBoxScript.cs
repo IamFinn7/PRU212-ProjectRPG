@@ -23,6 +23,6 @@ public class HitBoxScript : MonoBehaviour
     //hàm được tự gọi ra khi có va chạm giữa Obj có RigidBody 2D vs 1 Collider 2D khác
     void OnCollisionEnter2D(Collision2D col){
         //col.collider: truy cập vào Collider của Obj đang va chạm với với "col"
-        col.collider.SendMessage("OnHit");
+        col.collider.SendMessage("OnHit", damage);
     }  
 }

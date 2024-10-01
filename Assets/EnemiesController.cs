@@ -4,14 +4,21 @@ using UnityEngine;
 
 public class EnemiesController : MonoBehaviour
 {
+    public float health = 3;
     Animator animator;
     public float Health
     {
         set
         {
+            if(value < health){
+                animator.SetTrigger("hit");
+            }
+            
             health = value;
+
             if (health <= 0)
             {
+                animator.SetBool("isAlive", false);
             }
         }
         get
@@ -19,15 +26,17 @@ public class EnemiesController : MonoBehaviour
             return health;
         }
     }   
-    public float health = 3;
-
-
     private void Start()
     {
         animator = GetComponent<Animator>();
+        animator.SetBool("isAlive", true);
     }
 
-    public void OnHit(){
-        print("Hit");
+    void OnHit(float damage){
+        Health -= damage;
+    }
+
+    void removeEnemy(){
+        Destroy(gameObject);
     }
 }

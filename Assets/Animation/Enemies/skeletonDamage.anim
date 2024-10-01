@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: skeletonDeath
+  m_Name: skeletonDamage
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -32,14 +32,6 @@ AnimationClip:
       value: {fileID: 1165154051, guid: 6ac2430a8d53d5548960a36022a3c29f, type: 3}
     - time: 0.71428573
       value: {fileID: -1659761742, guid: 6ac2430a8d53d5548960a36022a3c29f, type: 3}
-    - time: 0.85714287
-      value: {fileID: 368891017, guid: 6ac2430a8d53d5548960a36022a3c29f, type: 3}
-    - time: 1
-      value: {fileID: -1807757533, guid: 6ac2430a8d53d5548960a36022a3c29f, type: 3}
-    - time: 1.1428572
-      value: {fileID: -929517717, guid: 6ac2430a8d53d5548960a36022a3c29f, type: 3}
-    - time: 1.2857143
-      value: {fileID: 2080839263, guid: 6ac2430a8d53d5548960a36022a3c29f, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -68,16 +60,12 @@ AnimationClip:
     - {fileID: -1330744282, guid: 6ac2430a8d53d5548960a36022a3c29f, type: 3}
     - {fileID: 1165154051, guid: 6ac2430a8d53d5548960a36022a3c29f, type: 3}
     - {fileID: -1659761742, guid: 6ac2430a8d53d5548960a36022a3c29f, type: 3}
-    - {fileID: 368891017, guid: 6ac2430a8d53d5548960a36022a3c29f, type: 3}
-    - {fileID: -1807757533, guid: 6ac2430a8d53d5548960a36022a3c29f, type: 3}
-    - {fileID: -929517717, guid: 6ac2430a8d53d5548960a36022a3c29f, type: 3}
-    - {fileID: 2080839263, guid: 6ac2430a8d53d5548960a36022a3c29f, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.4285715
+    m_StopTime: 0.85714287
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -96,11 +84,4 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events:
-  - time: 1.4285715
-    functionName: removeEnemy
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
+  m_Events: []
