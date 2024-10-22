@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour
                 render.flipX = false;
                 gameObject.BroadcastMessage("IsFacingRight", true);
             }
+            animator.SetBool("isMoving",true);
         }   
         else
         {

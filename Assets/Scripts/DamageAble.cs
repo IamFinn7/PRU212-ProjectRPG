@@ -1,14 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemiesController : MonoBehaviour
+public class DamageAble : MonoBehaviour, IDamageAble
 {
-    public float health = 3;
+    public float health = 3f;
     Animator animator;
-    public float Health
-    {
-        set
+    Rigidbody2D rb;
+    public float Health { 
+         set
         {
             if(value < health){
                 animator.SetTrigger("hit");
@@ -25,18 +23,23 @@ public class EnemiesController : MonoBehaviour
         {
             return health;
         }
-    }   
+    }
     private void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         animator.SetBool("isAlive", true);
     }
 
-    void OnHit(float damage){
+    public void OnHit(float damage)
+    {
+         Health -= damage;
+    }
+    public void OnHit(float damage, Vector2 knockBackValue)
+    {
         Health -= damage;
+        rb.AddForce(knockBackValue);
     }
 
-    void removeEnemy(){
-        Destroy(gameObject);
-    }
+
 }
