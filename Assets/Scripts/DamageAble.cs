@@ -1,10 +1,26 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DamageAble : MonoBehaviour, IDamageAble
 {
-    public float health = 3f;
+    [SerializeField] public float health = 3f;
+    [SerializeField] public float maxHealth = 3f;
+    [SerializeField] public Image HealthBarFill;
     Animator animator;
     Rigidbody2D rb;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        animator.SetBool("isAlive", true);
+
+        if (HealthBarFill != null)
+        {
+            HealthBarFill.fillAmount = health/maxHealth;
+        }
+    }
+
     public float Health { 
          set
         {
@@ -13,6 +29,11 @@ public class DamageAble : MonoBehaviour, IDamageAble
             }
             
             health = value;
+
+            if (HealthBarFill != null)
+            {
+            HealthBarFill.fillAmount = health/maxHealth;
+            }
 
             if (health <= 0)
             {
@@ -24,17 +45,12 @@ public class DamageAble : MonoBehaviour, IDamageAble
             return health;
         }
     }
-    private void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
-        animator.SetBool("isAlive", true);
-    }
 
     public void OnHit(float damage)
     {
          Health -= damage;
     }
+
     public void OnHit(float damage, Vector2 knockBackValue)
     {
         Health -= damage;
