@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.105}
-  m_SizeDelta: {x: 0.48, y: 0.11}
+  m_AnchoredPosition: {x: 0, y: 0.10500002}
+  m_SizeDelta: {x: 0.47423, y: 0.11272}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1201144101670584529
 CanvasRenderer:
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 1308410379808429031}
   - component: {fileID: 5134828006656950476}
   m_Layer: 0
-  m_Name: Panel
+  m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102,15 +102,15 @@ RectTransform:
   m_GameObject: {fileID: 1669761866732864993}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.58585805, y: 0.54629874, z: 1.0925975}
+  m_LocalScale: {x: 0.5, y: 0.54, z: 1.0925975}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8888107683792445013}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.13}
-  m_SizeDelta: {x: 0, y: 0.25}
+  m_AnchoredPosition: {x: -0.00000011920929, y: -0.145}
+  m_SizeDelta: {x: 0, y: 0.12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1308410379808429031
 CanvasRenderer:
@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 2503231807986406455}
   m_Layer: 0
   m_Name: Skeleton
-  m_TagString: Untagged
+  m_TagString: Enemies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

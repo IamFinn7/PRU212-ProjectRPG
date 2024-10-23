@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 7555035294656974913}
   - component: {fileID: 6258849348469130464}
   m_Layer: 0
-  m_Name: Canvas
+  m_Name: GUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -138,7 +138,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 20
   m_TargetDisplay: 0
 --- !u!114 &7555035294656974913
 MonoBehaviour:
@@ -198,7 +198,7 @@ GameObject:
   - component: {fileID: 2313118322385529923}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -212,7 +212,7 @@ Transform:
   m_GameObject: {fileID: 3123970570125454196}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.14265513, y: 0.044228673, z: 0}
+  m_LocalPosition: {x: -0.619, y: 0.225, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -330,8 +330,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
-  maxHealth: 3
-  HealthBarFill: {fileID: 0}
+  maxHealth: 50
+  HealthBarFill: {fileID: 1557766573159549925}
 --- !u!50 &-4730259814430606962
 Rigidbody2D:
   serializedVersion: 4
@@ -369,7 +369,7 @@ Animator:
   m_GameObject: {fileID: 3123970570125454196}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 93fe058bdd33d9a45862a6c959ec8a9a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -460,7 +460,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 140, y: -39}
-  m_SizeDelta: {x: 295, y: 35}
+  m_SizeDelta: {x: 295, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1799963575024457160
 CanvasRenderer:
@@ -512,7 +512,7 @@ GameObject:
   - component: {fileID: 4194981085356447576}
   - component: {fileID: 1557766573159549925}
   m_Layer: 0
-  m_Name: HealthBar
+  m_Name: HealthFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -566,10 +566,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 3262d01faef46ef42b260e15bf029d3a, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -587,7 +587,7 @@ GameObject:
   - component: {fileID: 4079965954944632590}
   - component: {fileID: 6148198038016588319}
   m_Layer: 0
-  m_Name: HealthFill
+  m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -712,7 +712,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.0396573, y: -0.022364482}
@@ -743,5 +743,5 @@ MonoBehaviour:
   damage: 1
   faceRight: {x: 0.145, y: -0.005, z: 0}
   faceLeft: {x: -0.145, y: -0.005, z: 0}
-  swordCollider: {fileID: 0}
+  swordCollider: {fileID: 5854466905018199764}
   knockBackForce: 500
