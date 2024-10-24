@@ -165,6 +165,7 @@ GameObject:
   - component: {fileID: 9115961082212401384}
   - component: {fileID: 8037377319473174295}
   - component: {fileID: 2503231807986406455}
+  - component: {fileID: 1596068207084881402}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Enemies
@@ -230,7 +231,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 10
   m_Sprite: {fileID: 2110167196, guid: 27caa4e89a364e843aff21bbd89ca426, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -364,6 +365,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1596068207084881402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2512271762011202096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 077016eb537e324488faf4ee4e36a69a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LootLists:
+  - {fileID: 11400000, guid: c8483774d7dd03d4393f34159e0350be, type: 2}
+  droppedItemPrefab: {fileID: 5309322509023792737, guid: eaef0b1bcf6184949bd435f323baa6a2, type: 3}
 --- !u!1 &2825938920359408291
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,7 +447,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.75
+  m_Radius: 0.4
 --- !u!114 &3265312513335607354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -600,7 +616,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 20
   m_TargetDisplay: 0
 --- !u!114 &5174951874560711958
 MonoBehaviour:

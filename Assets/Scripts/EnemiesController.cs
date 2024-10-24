@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -38,13 +39,18 @@ public class EnemiesController : MonoBehaviour
             }
         }
     }
-    void removeEnemy()
+    void Die()
     {
+        GetComponent<LootBag>().InstantiateLoot(transform.position);
         Destroy(gameObject);
     }
 
+    public event Action OnEnemyDestroyed;
     void OnDestroy()
     {
+        if(OnEnemyDestroyed != null){
+            OnEnemyDestroyed();
+        }
     }
 
     void CheckPlayer()
