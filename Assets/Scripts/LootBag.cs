@@ -3,19 +3,19 @@ using UnityEngine;
 public class LootBag : MonoBehaviour
 {
     [SerializeField]
-    public List<Loot> LootLists = new List<Loot>();
-    [SerializeField]
-    public GameObject droppedItemPrefab;
+    public List<ItemController> LootListGameObj = new List<ItemController>();
 
-    Loot GetDroppedItem()
+    ItemController GetDroppedItem()
     {
         int randomNumber = Random.Range(1,101);
-        List<Loot> possibleItems = new List<Loot>();
+        List<ItemController> possibleItems = new List<ItemController>();
 
-        foreach (Loot item in LootLists)
+        foreach (ItemController  item in LootListGameObj)
         {
-            if (randomNumber < item.dropChange)
+            //nếu số tỉ lệ ra đồ của vật lớn hơn số random ra
+            if (randomNumber < item.DropChange)
             {
+                //thêm tất cả các vật đó vào possibleItem
                 possibleItems.Add(item);
             }
         }
@@ -24,7 +24,7 @@ public class LootBag : MonoBehaviour
         if (possibleItems.Count > 0)
         {
             randomNumber = Random.Range(0, possibleItems.Count);
-            Loot itemDrop = possibleItems[randomNumber];
+            ItemController itemDrop = possibleItems[randomNumber];
             return itemDrop;
         }
 
@@ -33,13 +33,13 @@ public class LootBag : MonoBehaviour
 
     public void InstantiateLoot (Vector3 spawnPosition)
     {
-        Loot dropItem = GetDroppedItem();
+        ItemController dropItem = GetDroppedItem();
 
+        //sẽ có trường hợp dropItem rỗng nên phải check
         if (dropItem != null)
         {
             //Instantiate: hàm tạo ra 1 obj trên màn hình
-            GameObject lootGameObject = Instantiate(droppedItemPrefab, spawnPosition, Quaternion.identity);
-            lootGameObject.GetComponent<SpriteRenderer>().sprite = dropItem.lootSprite;
+           Instantiate(dropItem, spawnPosition, Quaternion.identity);
         }
     }
 }

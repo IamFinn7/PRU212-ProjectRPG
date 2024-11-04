@@ -163,9 +163,9 @@ GameObject:
   - component: {fileID: 7276899591230958865}
   - component: {fileID: 519665381918185430}
   - component: {fileID: 9115961082212401384}
+  - component: {fileID: 8120595003515915757}
   - component: {fileID: 8037377319473174295}
   - component: {fileID: 2503231807986406455}
-  - component: {fileID: 1596068207084881402}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Enemies
@@ -293,6 +293,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zoneDetected: {fileID: 3265312513335607354}
   moveSpeed: 500
+--- !u!114 &8120595003515915757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2512271762011202096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 077016eb537e324488faf4ee4e36a69a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LootListGameObj:
+  - {fileID: 790323826222185279, guid: 8ee12600d13a931438aed5f0fba3e362, type: 3}
 --- !u!61 &8037377319473174295
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -322,7 +336,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.0028482378, y: -0.0027456507}
@@ -365,21 +379,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1596068207084881402
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2512271762011202096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 077016eb537e324488faf4ee4e36a69a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LootLists:
-  - {fileID: 11400000, guid: c8483774d7dd03d4393f34159e0350be, type: 2}
-  droppedItemPrefab: {fileID: 5309322509023792737, guid: eaef0b1bcf6184949bd435f323baa6a2, type: 3}
 --- !u!1 &2825938920359408291
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,7 +567,7 @@ GameObject:
   - component: {fileID: 5174951874560711958}
   - component: {fileID: 5526183933455429525}
   m_Layer: 0
-  m_Name: Canvas
+  m_Name: UIHealth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

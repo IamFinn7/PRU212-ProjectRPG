@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private InventoryBGController inventory;
     public float moveSpeed = 0.5f; //player's speed
     public float maxSpeed = 2.5f;
     public bool canMove = true;
@@ -55,4 +56,13 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isMoving", false);
         }
     } 
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag("Item"))
+        {
+            inventory.AddItem(col.GetComponent<ItemController>());
+        }
+
+    }
 }

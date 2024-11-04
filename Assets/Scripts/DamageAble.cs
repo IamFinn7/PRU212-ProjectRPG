@@ -8,6 +8,7 @@ public class DamageAble : MonoBehaviour, IDamageAble
     [SerializeField] public Image HealthBarFill;
     Animator animator;
     Rigidbody2D rb;
+    // private AudioManager audioManager; 
 
     private void Start()
     {
@@ -15,11 +16,19 @@ public class DamageAble : MonoBehaviour, IDamageAble
         animator = GetComponent<Animator>();
         animator.SetBool("isAlive", true);
 
+        // audioManager = GetComponent<AudioManager>();
+
         if (HealthBarFill != null)
         {
             HealthBarFill.fillAmount = health/maxHealth;
         }
     }
+
+    // private void Awake()
+    // {
+    //     audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    // }
+
 
     public float Health { 
          set
@@ -49,13 +58,17 @@ public class DamageAble : MonoBehaviour, IDamageAble
     public void OnHit(float damage)
     {
          Health -= damage;
+        //  AudioEnemy();
     }
 
     public void OnHit(float damage, Vector2 knockBackValue)
     {
         Health -= damage;
         rb.AddForce(knockBackValue);
+        // AudioEnemy();
     }
 
-
+    // public void AudioEnemy(){
+    //     audioManager.PlaySFX(audioManager.hitClip);
+    // }
 }

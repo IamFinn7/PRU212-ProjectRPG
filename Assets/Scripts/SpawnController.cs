@@ -30,6 +30,7 @@ public class SpawnController : MonoBehaviour
             {
                 Vector2 spawnPosition = (Vector2) transform.position + Random.insideUnitCircle * spawnRadius;
 
+                //Instantiate: hàm tạo ra 1 obj trên màn hình
                 GameObject newEnemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
 
                 enemies.Add(newEnemy);
@@ -37,7 +38,6 @@ public class SpawnController : MonoBehaviour
             }
         }
     }
-
 
     private void SpawnBoss(){
         Vector2 spawnPosition = (Vector2) transform.position + Random.insideUnitCircle * spawnRadius;
@@ -47,7 +47,11 @@ public class SpawnController : MonoBehaviour
     {
         enemyKilled += 1;
         if ( enemyKilled == maxEnemies ){
-            SpawnBoss();
+            // Kiểm tra xem SpawnBoss có còn tồn tại hay không trước khi truy cập nó
+            if (this != null) 
+            {
+                SpawnBoss();
+            }
         }
     }
 }
