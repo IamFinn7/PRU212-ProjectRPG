@@ -3,6 +3,7 @@ using UnityEngine;
 public class KeyboardController : MonoBehaviour
 {
     [SerializeField] private InventoryBGController inventoryBG;
+    
     void Start()
     {
         inventoryBG.StartInventory();

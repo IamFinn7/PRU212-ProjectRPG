@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class TelePortHandl : MonoBehaviour
 {
-    [SerializeField] private int SceneId;
+    // [SerializeField] private int SceneId;
     [SerializeField] private Sprite itemNeeded;
     [SerializeField] private InventoryBGController inventory;
     void OnTriggerEnter2D(Collider2D col)
@@ -14,7 +14,7 @@ public class TelePortHandl : MonoBehaviour
         {
             if (inventory.CheckItemInInventory(itemNeeded))
             {
-                SceneManager.LoadScene(SceneId, LoadSceneMode.Single);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
             }
             else
             {

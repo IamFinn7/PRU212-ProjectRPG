@@ -80,7 +80,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af9625b715bbe6c4d922c6e02692a1c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRanged: 0
+  isRanged: 1
   PlayerIn: 0
 --- !u!1 &3495711282340397914
 GameObject:
@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 9088715074901226136}
   - component: {fileID: 2692323697714329142}
   - component: {fileID: 8803854234052980571}
+  - component: {fileID: -4763104160307192929}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -163,7 +164,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 320994663, guid: 7e46dc199fc667b459efc4ea1326e43f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -208,8 +209,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f146dbf1f8184034e895b6acc76755b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
-  maxHealth: 3
+  health: 10
+  maxHealth: 10
   HealthBarFill: {fileID: 5379510644008472282}
 --- !u!114 &809543358107854582
 MonoBehaviour:
@@ -316,6 +317,20 @@ MonoBehaviour:
   zoneDetected: {fileID: 4578529777607735065}
   facingRight: 1
   targetInZoneAttack: 0
+--- !u!114 &-4763104160307192929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3495711282340397914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 077016eb537e324488faf4ee4e36a69a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LootListGameObj:
+  - {fileID: 4164465819918572322, guid: b3c55580c4f9e734c9abd05dc70b345d, type: 3}
 --- !u!1 &4300382413948288964
 GameObject:
   m_ObjectHideFlags: 0

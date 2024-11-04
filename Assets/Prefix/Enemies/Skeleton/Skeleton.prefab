@@ -307,6 +307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LootListGameObj:
   - {fileID: 790323826222185279, guid: 8ee12600d13a931438aed5f0fba3e362, type: 3}
+  - {fileID: 2668292353699132992, guid: 48483e01524b3554c81f475d7e7de82a, type: 3}
 --- !u!61 &8037377319473174295
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -460,6 +461,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectedObj: {fileID: 0}
+  PlayIn: 0
 --- !u!1 &3319247257380108765
 GameObject:
   m_ObjectHideFlags: 0

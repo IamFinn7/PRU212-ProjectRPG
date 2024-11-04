@@ -43,7 +43,7 @@ public class InventoryBGController : MonoBehaviour
             int position = GetFirstEmptySlot();
             listsItems[position].SetData(item.ImageItem, 1, item.ItemName);
         }
-        
+
         Destroy(item.gameObject);
     }
 
@@ -80,7 +80,7 @@ public class InventoryBGController : MonoBehaviour
                 return true;
             }
         }
-
         return false;
     }
+
 }

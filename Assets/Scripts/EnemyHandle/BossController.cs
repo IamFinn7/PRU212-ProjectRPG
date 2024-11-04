@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class BossController : MonoBehaviour
@@ -48,6 +49,19 @@ public class BossController : MonoBehaviour
 
         Rigidbody2D skillRb = skill.GetComponent<Rigidbody2D>();
         skillRb.velocity = direction * 0.5f;
+    }
 
+    void Die()
+    {
+        GetComponent<LootBag>().InstantiateLoot(transform.position);
+        Destroy(gameObject);
+    }
+
+    public event Action OnEnemyDestroyed;
+    void OnDestroy()
+    {
+        if(OnEnemyDestroyed != null){
+            OnEnemyDestroyed();
+        }
     }
 }
