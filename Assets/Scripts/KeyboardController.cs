@@ -3,7 +3,7 @@ using UnityEngine;
 public class KeyboardController : MonoBehaviour
 {
     [SerializeField] private InventoryBGController inventoryBG;
-    
+    [SerializeField] private PauseController pauseGame;
     void Start()
     {
         inventoryBG.StartInventory();
@@ -24,5 +24,21 @@ public class KeyboardController : MonoBehaviour
                 inventoryBG.Show();
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+             if (pauseGame.isActive)
+            {
+                pauseGame.Hide();
+                Time.timeScale = 1f;
+            }
+            else
+            {
+                Time.timeScale = 0f;
+                pauseGame.Show();
+                inventoryBG.Hide();
+            }
+        }
     }
+
 }

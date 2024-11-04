@@ -75,7 +75,7 @@ public class InventoryBGController : MonoBehaviour
     {
         foreach (var uiItem in listsItems)
         {
-            if(uiItem.ItemImage.sprite == sprite)
+                if(uiItem.ItemImage.sprite == sprite)
             {
                 return true;
             }
