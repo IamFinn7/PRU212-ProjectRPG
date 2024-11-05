@@ -118,7 +118,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6675707526784860564
 RectTransform:
   m_ObjectHideFlags: 0
@@ -191,4 +191,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemBoxPrefab: {fileID: 6644886990287014760, guid: c2b51f048280deb4aa83d9cdaaa23b42, type: 3}
   inventoryBackGround: {fileID: 6255305889522633776}
-  isActive: 0
+  isActive: 1
