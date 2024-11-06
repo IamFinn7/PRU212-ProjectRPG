@@ -20,7 +20,7 @@ public class BulletController : MonoBehaviour
         }
         else
         {
-            targetTag = "Enemy";
+            targetTag = "Enemies";
         }
 
     }

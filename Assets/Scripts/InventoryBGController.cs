@@ -11,7 +11,7 @@ public class InventoryBGController : MonoBehaviour
     public bool isActive = false;
     public void StartInventory()
     {
-        for(int i = 0; i < inventorySize; i++)
+        for (int i = 0; i < inventorySize; i++)
         {
             //Tạo ra các ô item trong kho
             ItemBoxController temp = Instantiate(itemBoxPrefab, Vector2.zero, Quaternion.identity);
@@ -23,25 +23,25 @@ public class InventoryBGController : MonoBehaviour
         }
     }
 
-    public void AddItem (ItemController item)
+    public void AddItem(ItemController item, int num_quantity)
     {
         bool isAdded = false;
 
         string name = item.ItemName;
         foreach (var uiItem in listsItems)
         {
-            if(uiItem._itemName == name)
+            if (uiItem._itemName == name)
             {
-                uiItem.AddQuantity(1);
+                uiItem.AddQuantity(num_quantity);
                 isAdded = true;
                 break;
             }
         }
 
-        if(!isAdded)
+        if (!isAdded)
         {
             int position = GetFirstEmptySlot();
-            listsItems[position].SetData(item.ImageItem, 1, item.ItemName);
+            listsItems[position].SetData(item.ImageItem, num_quantity, item.ItemName);
         }
 
         Destroy(item.gameObject);
@@ -49,9 +49,9 @@ public class InventoryBGController : MonoBehaviour
 
     public int GetFirstEmptySlot()
     {
-        for(int i = 0; i <= listsItems.Count; i++)
+        for (int i = 0; i <= listsItems.Count; i++)
         {
-            if(listsItems[i].isEmpty)
+            if (listsItems[i].isEmpty)
             {
                 return i;
             }
@@ -75,7 +75,7 @@ public class InventoryBGController : MonoBehaviour
     {
         foreach (var uiItem in listsItems)
         {
-                if(uiItem.ItemImage.sprite == sprite)
+            if (uiItem.ItemImage.sprite == sprite)
             {
                 return true;
             }
@@ -83,4 +83,20 @@ public class InventoryBGController : MonoBehaviour
         return false;
     }
 
+    public int FindItemByName(string name)
+    {
+        for (int i = 0; i < listsItems.Count; i++)
+        {
+            if (listsItems[i]._itemName == name)
+            {
+                return i; // Trả về vị trí của item
+            }
+        }
+        return -1; // Trả về -1 nếu không tìm thấy
+    }
+
+    public void ReduceQuantityOfItem(int pos)
+    {
+        listsItems[pos].RemoveQuantity(1);
+    }
 }

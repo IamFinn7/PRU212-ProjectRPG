@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 343b5dfca5280e445b9a16fea1c05671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockBackForce: 500
+  knockBackForce: 100
   bulletDamage: 1
   isEnemy: 1
   distanceBullet: 1

@@ -166,6 +166,7 @@ GameObject:
   - component: {fileID: 8120595003515915757}
   - component: {fileID: 8037377319473174295}
   - component: {fileID: 2503231807986406455}
+  - component: {fileID: 6096596148763259459}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Enemies
@@ -307,7 +308,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LootListGameObj:
   - {fileID: 790323826222185279, guid: 8ee12600d13a931438aed5f0fba3e362, type: 3}
-  - {fileID: 2668292353699132992, guid: 48483e01524b3554c81f475d7e7de82a, type: 3}
 --- !u!61 &8037377319473174295
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -380,6 +380,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &6096596148763259459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2512271762011202096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c2672e2dca9e814fa568f42ea3c6472, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2825938920359408291
 GameObject:
   m_ObjectHideFlags: 0

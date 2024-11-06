@@ -10,10 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 9053746399487217657}
   - component: {fileID: 7250210012126135055}
+  - component: {fileID: 7548970584042723750}
   - component: {fileID: 790323826222185279}
   - component: {fileID: 8572006004810672964}
   - component: {fileID: -3204261389958589698}
-  - component: {fileID: 4824051934693336723}
+  - component: {fileID: 2183588698874942459}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Item
@@ -88,6 +89,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &7548970584042723750
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6476962522082932779}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 608a48bb2c13da343afb916f2fb040bd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &790323826222185279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,7 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ImageItem: {fileID: 1626504913, guid: 8271aef44f46eeb458bcf77033fb6446, type: 3}
   ItemName: Coin
-  DropChange: 85
+  DropChange: 100
 --- !u!50 &8572006004810672964
 Rigidbody2D:
   serializedVersion: 4
@@ -165,24 +187,15 @@ CapsuleCollider2D:
   m_Offset: {x: -0.004744798, y: -0.024561416}
   m_Size: {x: 0.11618823, y: 0.11618825}
   m_Direction: 0
---- !u!95 &4824051934693336723
-Animator:
-  serializedVersion: 5
+--- !u!114 &2183588698874942459
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6476962522082932779}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 30d7129cd3bc13c4ca4076e0afa35370, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dcc5a1d6bdea3d4081d719b74473203, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

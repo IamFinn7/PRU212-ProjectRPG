@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemies
   - Item
+  - Audio
   layers:
   - Default
   - TransparentFX

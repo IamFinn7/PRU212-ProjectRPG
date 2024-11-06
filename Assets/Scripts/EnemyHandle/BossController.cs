@@ -1,9 +1,12 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class BossController : MonoBehaviour
 {
     [SerializeField] private BulletController skillPrefab;
+    [SerializeField] private GameObject summonCastPrefab;
     Animator animator;
     SpriteRenderer render;
     private void Start()
@@ -40,15 +43,28 @@ public class BossController : MonoBehaviour
 
         Vector2 skillPosition = new Vector2(screenPosition.x + offsetWidth, screenPosition.y);
 
-        Vector2 direction = (targetPosition - skillPosition).normalized;
+      
+        int projectileCount = Random.Range(1, 10);
+        for (int i = 0; i < projectileCount; i++)
+        {
+            Vector2 direction = (targetPosition - skillPosition).normalized;
+            var skill = Instantiate(skillPrefab, skillPosition, Quaternion.identity);
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            skill.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+            Rigidbody2D skillRb = skill.GetComponent<Rigidbody2D>();
+            float skillSpeed = 1.5f;
 
-        var skill = Instantiate(skillPrefab, skillPosition, Quaternion.identity);
-        
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        skill.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+            if (projectileCount > 3)
+            {
+                float spreadAngle = 10f; // Spread angle in degrees
+                angle += (i - 1) * spreadAngle; // Adjust angles to create spread effect
+                skill.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle)); // Set the new angle
 
-        Rigidbody2D skillRb = skill.GetComponent<Rigidbody2D>();
-        skillRb.velocity = direction * 0.5f;
+                // Recalculate the direction with the new angle
+                direction = new Vector3(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad)).normalized;
+            }
+            skillRb.velocity = direction * skillSpeed;
+        }
     }
 
     void Die()
@@ -64,4 +80,26 @@ public class BossController : MonoBehaviour
             OnEnemyDestroyed();
         }
     }
+
+     public void SecondSkill()
+    {
+        Vector3 currentPosition = transform.position;
+
+        List<Vector3> surroundingPositions = new List<Vector3>();
+
+        surroundingPositions.Add(new Vector3(currentPosition.x - 0.3f, currentPosition.y, currentPosition.z));
+        surroundingPositions.Add(new Vector3(currentPosition.x + 0.3f, currentPosition.y, currentPosition.z));
+        surroundingPositions.Add(new Vector3(currentPosition.x, currentPosition.y + 0.3f, currentPosition.z));
+        surroundingPositions.Add(new Vector3(currentPosition.x, currentPosition.y - 0.3f, currentPosition.z));
+
+        foreach (Vector3 position in surroundingPositions)
+        {
+            Instantiate(summonCastPrefab, position, Quaternion.identity);
+        }
+
+    }
+    public bool canAttack = false;
+
+    public void LockAttack() => canAttack = false;
+    public void UnLockAttack() => canAttack = true;
 }
