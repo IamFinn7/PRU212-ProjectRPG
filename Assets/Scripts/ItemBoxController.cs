@@ -36,4 +36,22 @@ public class ItemBoxController : MonoBehaviour
         _quantity += quantity;
         QuantityTxt.text = _quantity + "";
     }
+
+    public void RemoveQuantity(int quantity)
+    {
+        _quantity -= quantity;
+
+        if (_quantity <= 0)
+        {
+            _quantity = 0;
+            _itemName = null;
+            QuantityTxt.text = "";
+            ItemImage.gameObject.SetActive(false);
+            isEmpty = true;
+        }
+        else
+        {
+            QuantityTxt.text = _quantity + "";
+        }
+    }
 }

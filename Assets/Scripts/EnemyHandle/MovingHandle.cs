@@ -28,6 +28,7 @@ public class MovingHandle : MonoBehaviour
             HandleMoving(target.transform.position);
         } else
         {
+            HandleMoving(target.transform.position);
             animator.SetBool("isMoving", false);
         }
     }
@@ -35,7 +36,7 @@ public class MovingHandle : MonoBehaviour
     void HandleMoving(Vector2 targetPosition)
     {
         //normalize -> dùng để lấy hướng mà không bị ảnh hưởng bới khoảng cách
-        Vector2 direction = (zoneDetected.detectedObj.transform.position - transform.position).normalized;
+        Vector2 direction = (targetPosition - (Vector2)transform.position).normalized;
 
         //Nếu phía trước có vật cản
         if (IsObstacleInDirection(direction))
@@ -79,6 +80,6 @@ public class MovingHandle : MonoBehaviour
     void FlipSprite(Vector2 direction)
     {
         render.flipX = direction.x < 0;
-        // gameObject.BroadcastMessage("IsFacingRight", direction.x > 0);
+        facingRight = direction.x > 0;
     }
 }

@@ -16,8 +16,6 @@ public class DamageAble : MonoBehaviour, IDamageAble
         animator = GetComponent<Animator>();
         animator.SetBool("isAlive", true);
 
-        // audioManager = GetComponent<AudioManager>();
-
         if (HealthBarFill != null)
         {
             HealthBarFill.fillAmount = health/maxHealth;
@@ -58,17 +56,47 @@ public class DamageAble : MonoBehaviour, IDamageAble
     public void OnHit(float damage)
     {
          Health -= damage;
-        //  AudioEnemy();
     }
 
     public void OnHit(float damage, Vector2 knockBackValue)
     {
         Health -= damage;
         rb.AddForce(knockBackValue);
-        // AudioEnemy();
     }
 
-    // public void AudioEnemy(){
-    //     audioManager.PlaySFX(audioManager.hitClip);
-    // }
+    public float MaxHealth
+    {
+        set
+        {
+
+        }
+        get
+        {
+            return maxHealth;
+        }
+    }
+
+    public void AddHealth(int healthValue)
+    {
+        health = Mathf.Min(health + healthValue, maxHealth);
+
+
+        if (HealthBarFill != null)
+        {
+            HealthBarFill.fillAmount = health / maxHealth;
+        }
+        // if (health + healthValue > maxHealth)
+        // {
+        //     health = maxHealth;
+        // }
+        // else
+        // {
+        //     health += healthValue;
+        // }
+    }
+
+    public void SetIsAlive(bool isAlive)
+    {
+        animator.SetBool("isAlive", isAlive);
+    }
 }

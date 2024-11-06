@@ -1,17 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss : EnemiesController
+public class BossWinter : MonoBehaviour
 {
-    public float attack2Range = 2.5f; // Bán kính tấn công của Attack2
-    public Vector2 attack2Offset = new Vector2(0.4f, -0.2f); // Vị trí tấn công của Attack2
+    Animator animator;
+    SpriteRenderer render;
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+        render = GetComponent<SpriteRenderer>();
 
-    // private void Awake()
-    // {
-    //     Health = 50; // Giá trị máu dành riêng cho Boss
-    //     attackInterval = 5f; // Thời gian giữa các lần tấn công của Boss
-    // }
+        animator.SetBool("isMoving", false);
+    }
+    void Die()
+    {
+        GetComponent<LootBag>().InstantiateLoot(transform.position);
+        Destroy(gameObject);
+    }
+
 
     // private void Start()
     // {

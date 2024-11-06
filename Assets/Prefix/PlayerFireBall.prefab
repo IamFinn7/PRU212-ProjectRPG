@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4662244809135587163}
   - component: {fileID: 6981488199786317757}
   m_Layer: 0
-  m_Name: Fire Ball
+  m_Name: PlayerFireBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,9 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 343b5dfca5280e445b9a16fea1c05671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockBackForce: 100
+  knockBackForce: 500
   bulletDamage: 1
-  isEnemy: 1
+  isEnemy: 0
   distanceBullet: 1
 --- !u!50 &4662244809135587163
 Rigidbody2D:

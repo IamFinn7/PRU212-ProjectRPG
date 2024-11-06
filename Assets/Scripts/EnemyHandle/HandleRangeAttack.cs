@@ -7,7 +7,6 @@ public class HandleRangeAttack : MonoBehaviour
 
     private string targetTag = "Player";
     public bool PlayerIn = false;
-
     private bool Melee_PlayerInHitRange = false;
     private BossController bossController ;
     void Start()
@@ -15,6 +14,7 @@ public class HandleRangeAttack : MonoBehaviour
        bossController = GetComponentInParent<BossController>();
 
     }
+
     void FixedUpdate()
     {
         if (isRanged)
@@ -30,7 +30,11 @@ public class HandleRangeAttack : MonoBehaviour
     void HandleRange()
     {
         if (bossController != null && PlayerIn && !Melee_PlayerInHitRange){
-            bossController.Attack(1);
+            if(bossController.canAttack)
+            {
+                int skill = RandomSkill();
+                bossController.Attack(skill);
+            }
         }
     }
 
@@ -65,5 +69,11 @@ public class HandleRangeAttack : MonoBehaviour
 
             PlayerIn = false;
         }
+    }
+
+    private int RandomSkill()
+    {
+        int random = Random.Range(1, 101);
+        return random <= 80 ? 1 : 2; // 50% for 1, 25% for 2, 25% for 3
     }
 }
