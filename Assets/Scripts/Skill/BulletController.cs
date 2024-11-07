@@ -17,10 +17,12 @@ public class BulletController : MonoBehaviour
          if (isEnemy)
         {
             targetTag = "Player";
+            bulletDamage = 1f;
         }
         else
         {
             targetTag = "Enemies";
+            bulletDamage = 3f;
         }
 
     }

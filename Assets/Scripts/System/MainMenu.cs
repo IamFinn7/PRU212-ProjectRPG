@@ -7,19 +7,17 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject Player;
     [SerializeField] private GameObject continueButton;
 
-    void Start()
-    {
-        if (File.Exists(Application.persistentDataPath + "/saveTest.dat"))
-        {
-            continueButton.SetActive(true);
-        }
-        else
-        {
-            continueButton.SetActive(false);
-        }
-    }
     public void PlayGame()
     {
+        // Xóa file lưu trước khi bắt đầu trò chơi mới
+        string saveFilePath = Application.persistentDataPath + "/saveTest.dat";
+        if (File.Exists(saveFilePath))
+        {
+            File.Delete(saveFilePath);
+            Debug.Log("Dữ liệu đã bị xóa để bắt đầu trò chơi mới.");
+        }
+
+        // Chuyển đến scene tiếp theo (màn đầu tiên của trò chơi)
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         Time.timeScale = 1f;
     }

@@ -48,6 +48,6 @@ MonoBehaviour:
   enemyPrefab: {fileID: 2512271762011202096, guid: 60fce65a05671524b9c27e2d3ca1e4e7, type: 3}
   bossPrefab: {fileID: 3495711282340397914, guid: 14db644efdc873a47bd5cd0b9035094d, type: 3}
   canSpawn: 1
-  maxEnemies: 10
-  spawnRadius: 2
+  maxEnemies: 7
+  spawnRadius: 1.5
   enemies: []

@@ -127,45 +127,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5353023842856282099, guid: 58f3be9a70d20a64788c9f523946d041, type: 3}
   m_PrefabInstance: {fileID: 1325238987}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &361033728
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _WidthHeightRadius: {r: 600, g: 150, b: 80, a: 0}
-  m_BuildTextureStacks: []
 --- !u!1001 &523947875
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9743,7 +9704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!21 &827156361
+--- !u!21 &833044312
 Material:
   serializedVersion: 8
   m_ObjectHideFlags: 0
@@ -9782,7 +9743,7 @@ Material:
     m_Colors:
     - _WidthHeightRadius: {r: 600, g: 150, b: 80, a: 0}
   m_BuildTextureStacks: []
---- !u!21 &833044312
+--- !u!21 &850670578
 Material:
   serializedVersion: 8
   m_ObjectHideFlags: 0
@@ -10445,6 +10406,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!21 &1727241318
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _WidthHeightRadius: {r: 600, g: 150, b: 80, a: 0}
+  m_BuildTextureStacks: []
 --- !u!1001 &1445269631921952385
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10731,26 +10731,6 @@ PrefabInstance:
     - target: {fileID: 2620900247310186981, guid: 1c0f819e1a90b054a81a8e2483caf22f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8562907730622990827, guid: 1c0f819e1a90b054a81a8e2483caf22f, type: 3}
-      propertyPath: canSpawn
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8562907730622990827, guid: 1c0f819e1a90b054a81a8e2483caf22f, type: 3}
-      propertyPath: spawnRate
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8562907730622990827, guid: 1c0f819e1a90b054a81a8e2483caf22f, type: 3}
-      propertyPath: maxEnemies
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8562907730622990827, guid: 1c0f819e1a90b054a81a8e2483caf22f, type: 3}
-      propertyPath: enemyPrefab
-      value: 
-      objectReference: {fileID: 2512271762011202096, guid: 60fce65a05671524b9c27e2d3ca1e4e7, type: 3}
-    - target: {fileID: 8562907730622990827, guid: 1c0f819e1a90b054a81a8e2483caf22f, type: 3}
-      propertyPath: spawnRadius
-      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8908318399296751934, guid: 1c0f819e1a90b054a81a8e2483caf22f, type: 3}
       propertyPath: m_Name
