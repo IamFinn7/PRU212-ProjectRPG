@@ -124,7 +124,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ImageItem: {fileID: 1626504913, guid: 8271aef44f46eeb458bcf77033fb6446, type: 3}
   ItemName: Coin
-  DropChange: 100
+  DropChange: 90
+  DropValue: 1
+  RandomDropValue: 1
 --- !u!50 &8572006004810672964
 Rigidbody2D:
   serializedVersion: 4

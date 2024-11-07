@@ -74,6 +74,6 @@ public class HandleRangeAttack : MonoBehaviour
     private int RandomSkill()
     {
         int random = Random.Range(1, 101);
-        return random <= 80 ? 1 : 2; // 50% for 1, 25% for 2, 25% for 3
+        return random <= 90 ? 1 : 2; // 50% for 1, 25% for 2, 25% for 3
     }
 }

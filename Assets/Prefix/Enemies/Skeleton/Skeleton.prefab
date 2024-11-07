@@ -308,6 +308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LootListGameObj:
   - {fileID: 790323826222185279, guid: 8ee12600d13a931438aed5f0fba3e362, type: 3}
+  - {fileID: 2668292353699132992, guid: 48483e01524b3554c81f475d7e7de82a, type: 3}
 --- !u!61 &8037377319473174295
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -337,7 +338,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.0028482378, y: -0.0027456507}
@@ -459,7 +460,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Radius: 1.5
 --- !u!114 &3265312513335607354
 MonoBehaviour:
   m_ObjectHideFlags: 0
