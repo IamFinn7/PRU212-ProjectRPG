@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8908318399296751934
+--- !u!1 &203655816513715189
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,46 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2620900247310186981}
-  - component: {fileID: 8562907730622990827}
+  - component: {fileID: 3916678264816870517}
+  - component: {fileID: 9157316935687302520}
   m_Layer: 0
-  m_Name: SpawnPoint
+  m_Name: SaveManage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2620900247310186981
+--- !u!4 &3916678264816870517
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8908318399296751934}
+  m_GameObject: {fileID: 203655816513715189}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.909164, y: -0.3568178, z: 90}
+  m_LocalPosition: {x: -0.6570991, y: -0.7015585, z: 0.0032676049}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8562907730622990827
+--- !u!114 &9157316935687302520
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8908318399296751934}
+  m_GameObject: {fileID: 203655816513715189}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d65b62a0f764974f833ef5f67784260, type: 3}
+  m_Script: {fileID: 11500000, guid: 1719c35d70da65047839412e6352f8d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 1.5
-  enemyPrefab: {fileID: 2512271762011202096, guid: 60fce65a05671524b9c27e2d3ca1e4e7, type: 3}
-  bossPrefab: {fileID: 3495711282340397914, guid: 14db644efdc873a47bd5cd0b9035094d, type: 3}
-  canSpawn: 1
-  maxEnemies: 10
-  spawnRadius: 2
-  enemies: []

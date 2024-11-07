@@ -14,7 +14,7 @@ public class ItemController : MonoBehaviour
     {
         if (RandomDropValue)
         {
-            DropValue = Random.Range(1, 4);
+            DropValue = Random.Range(5, 10);
         }
     }
 

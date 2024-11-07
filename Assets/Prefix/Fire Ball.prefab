@@ -102,7 +102,7 @@ MonoBehaviour:
   knockBackForce: 100
   bulletDamage: 1
   isEnemy: 1
-  distanceBullet: 1
+  distanceBullet: 2
 --- !u!50 &4662244809135587163
 Rigidbody2D:
   serializedVersion: 4

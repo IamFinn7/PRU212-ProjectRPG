@@ -23,17 +23,13 @@ public class MovingHandle : MonoBehaviour
     {
         GameObject target = zoneDetected.detectedObj != null ? zoneDetected.detectedObj.gameObject : null;
 
-        if (target != null && targetInZoneAttack == false)
+        if (target != null)
         {
-            HandleMoving(target.transform.position);
-        } else
-        {
-            HandleMoving(target.transform.position);
-            animator.SetBool("isMoving", false);
-        }
+            HandleMoving(target.transform.position, !targetInZoneAttack);
+        } 
     }
 
-    void HandleMoving(Vector2 targetPosition)
+    void HandleMoving(Vector2 targetPosition, bool canMove)
     {
         //normalize -> dùng để lấy hướng mà không bị ảnh hưởng bới khoảng cách
         Vector2 direction = (targetPosition - (Vector2)transform.position).normalized;
@@ -46,10 +42,14 @@ public class MovingHandle : MonoBehaviour
             direction = newDirection;
         }
 
-        MoveInDirection(direction);
-        FlipSprite(direction);
+        if(canMove)
+        {
+            MoveInDirection(direction);
+        }
 
-        animator.SetBool("isMoving", true);
+        FlipSprite(direction);
+        animator.SetBool("isMoving", canMove);
+
     }
 
     //Hàm dùng để kiểm tra xem có vật cản hay không

@@ -195,4 +195,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ImageItem: {fileID: 1678594020, guid: 9f3f3dc2b397b1b48be9467e8350ba55, type: 3}
   ItemName: BottleBlood
-  DropChange: 100
+  DropChange: 80
+  DropValue: 1
+  RandomDropValue: 0
