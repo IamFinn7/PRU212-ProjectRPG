@@ -85,14 +85,6 @@ public class DamageAble : MonoBehaviour, IDamageAble
         {
             HealthBarFill.fillAmount = health / maxHealth;
         }
-        // if (health + healthValue > maxHealth)
-        // {
-        //     health = maxHealth;
-        // }
-        // else
-        // {
-        //     health += healthValue;
-        // }
     }
 
     public void SetIsAlive(bool isAlive)
